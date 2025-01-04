@@ -5,6 +5,32 @@ import './Project.scss'; // We'll define our SCSS or CSS here
 function Projects() {
   const projectsRef = useRef(null);
   const [inView, setInView] = useState(false);
+  const myProjects = [
+    {
+      title: "Porject Title",
+      image: "...",
+      tech: ["React", "SASS", "Node.js"],
+      description: "A responsive personal portfolio website..."
+    },
+    {
+        title: "Porject Title",
+        image: "...",
+        tech: ["React", "SASS", "Node.js"],
+        description: "A responsive personal portfolio website..."
+      },
+      {
+        title: "Porject Title",
+        image: "...",
+        tech: ["React", "SASS", "Node.js"],
+        description: "A responsive personal portfolio website..."
+      },
+      {
+        title: "Porject Title",
+        image: "...",
+        tech: ["React", "SASS", "Node.js"],
+        description: "A responsive personal portfolio website..."
+      }
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,20 +56,28 @@ function Projects() {
 
   return (
     <div className={`projects ${inView ? 'animate' : ''}`} ref={projectsRef}>
-      {/* Heading at the top */}
       <div className="heading-primary">Projects</div>
-      
-      {/* Container for the GIF and the line. We'll animate from right to left. */}
+
       <div className="walking-line-container">
         <img className="walking-gif" src={Walking} alt="Walking" />
         <div className="divider"></div>
       </div>
 
-      {/* Some example text about your projects */}
-      <div className="projects-text">
-        <div>Project 1</div>
-        <div>Project 2</div>
-        <div>Project 3</div>
+      <div className="projects-grid">
+        {myProjects.map((proj, i) => (
+          <div className="project-card" key={i}>
+            <img src={proj.image} alt={proj.title} className="project-image" />
+            <div className="project-info">
+              <h3 className="project-title">{proj.title}</h3>
+              <ul className="project-tech-list">
+                {proj.tech.map((tech, j) => (
+                  <li key={j}>{tech}</li>
+                ))}
+              </ul>
+              <p className="project-description">{proj.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

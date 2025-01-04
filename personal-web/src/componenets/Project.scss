@@ -5,58 +5,62 @@
   flex-direction: column;
   align-items: center;
 
-  /* ---------------------------
+  /* -------------------------------------
      1) PROJECTS HEADING
-  --------------------------- */
+  ------------------------------------- */
   .heading-primary {
     font-family: "Press Start 2P", serif;
-    font-size: 2rem;
+    font-size: 4rem;
     color: var(--color-primary);
-    margin-bottom: 1.5rem;
-
-    /* Start hidden */
-    opacity: 0;
+    line-height: 1;
+    text-align: center;
+    position: relative;
+    top: 4rem;
     transform: translateY(20px);
-    transition: all 0.8s ease 0.3s;
+    transition: all 0.7s ease 0.3s;
+    z-index: 1;
+
   }
 
-  /* ---------------------------
+  /* -------------------------------------
      2) WALKING GIF + DIVIDER
-  --------------------------- */
+  ------------------------------------- */
   .walking-line-container {
     position: relative;
-    width: 80%;        /* or 100%, adjust as needed */
-    max-width: 800px;  /* optional max width */
-    height: 100px;     /* enough height for the GIF + line */
+    width: 80%;        /* or 100%, your choice */
+    max-width: 800px;  /* optional */
+    height: 100px;     /* room for GIF + line */
     margin-bottom: 2rem;
 
-    /* The GIF starts on the right side, hidden */
+    /* GIF starts on the right side */
     .walking-gif {
       position: absolute;
       bottom: 0;
-      /* Start it near the right edge. 
-         For example, if the gif is ~80px wide: */
+      /* Suppose the GIF is ~80px wide, start it on the right */
       left: calc(100% - 80px);
       height: 80px;
-      opacity: 0;         /* hidden until animated */
+      opacity: 0;       /* hidden until animate */
     }
 
-    /* The divider line also starts from the right to expand leftward */
+    /* Divider: full width but scaled from right to left */
     .divider {
       position: absolute;
       bottom: 0;
-      right: 0;          /* anchor the line to the right */
+      left: 0;
+      right: 0;                  /* covers entire container width */
       height: 2px;
       background-color: var(--color-primary);
-      width: 0;          /* start collapsed */
-      opacity: 0;
-      /* We'll use transform origin so it "unfolds" to the left */
+      
+      /* Start scaled to 0; 'right' origin => expands leftward */
+      transform: scaleX(0);
       transform-origin: right center;
+      opacity: 0;
 
+      /* The dot should appear on the left end after expanding */
       &::after {
         content: "";
         position: absolute;
-        right: 0;
+        left: 0;
         bottom: 50%;
         transform: translateY(50%);
         width: 12px;
@@ -68,25 +72,25 @@
     }
   }
 
-  /* ---------------------------
+  /* -------------------------------------
      3) PROJECTS TEXT
-  --------------------------- */
+  ------------------------------------- */
   .projects-text {
     text-align: center;
 
     > div {
       margin: 0.5rem 0;
     }
-    /* Fade in from below */
+    /* Start hidden, fade in later */
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.8s ease 0.5s;
   }
 
-  /* ---------------------------
-     4) KEYFRAMES (RIGHT -> LEFT)
-  --------------------------- */
-  @keyframes walkAcrossReverse {
+  /* -------------------------------------
+     4) KEYFRAMES
+  ------------------------------------- */
+  @keyframes walkRightToLeft {
     0% {
       left: calc(100% - 80px);
     }
@@ -95,8 +99,7 @@
     }
   }
 
-  /* For the line, we can simply expand from the right origin */
-  @keyframes lineExpandReverse {
+  @keyframes lineExpandRightToLeft {
     0% {
       transform: scaleX(0);
     }
@@ -105,9 +108,9 @@
     }
   }
 
-  /* ---------------------------
-     5) TRIGGER ANIMATION
-  --------------------------- */
+  /* -------------------------------------
+     5) .animate => Trigger everything
+  ------------------------------------- */
   &.animate {
     .heading-primary {
       opacity: 1;
@@ -117,11 +120,11 @@
     .walking-line-container {
       .walking-gif {
         opacity: 1;
-        animation: walkAcrossReverse 2s linear forwards;
+        animation: walkRightToLeft 2s linear forwards;
       }
       .divider {
         opacity: 1;
-        animation: lineExpandReverse 2s linear forwards;
+        animation: lineExpandRightToLeft 2s linear forwards;
       }
     }
 
@@ -130,4 +133,91 @@
       transform: translateY(0);
     }
   }
+}
+
+.projects .walking-line-container .walking-gif{
+  z-index: 1;
+  background: transparent;
+}
+
+/* Container for the entire Projects section */
+.projects-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The heading of the section */
+.heading-primary {
+  font-family: "Press Start 2P", serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--color-primary); /* or your brand color */
+}
+
+/* A grid to display multiple projects side by side (responsive) */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; /* spacing between cards */
+}
+
+/* Each project card container */
+.project-card {
+  background-color: rgba(11, 47, 86, 0.05); /* subtle background */
+  border: 1px solid var(--color-primary);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The project image (screenshot) */
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Info container inside the card */
+.project-info {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* spacing between elements */
+}
+
+/* Project title */
+.project-title {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+/* Tech list */
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-tech-list li {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+
+/* Project description */
+.project-description {
+  margin: 0;
+  line-height: 1.5;
+  color: #333;
 }
