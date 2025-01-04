@@ -1,0 +1,148 @@
+.about-me {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1.25fr min-content 0.5fr 0.5fr;
+    margin-bottom: 3rem;
+  
+    // -------------------------
+    // Image Container / Circle
+    // -------------------------
+    .image-container {
+      position: relative;  // so we can absolutely position the img
+      width: 320px;
+      height: 320px;
+      
+      // The background circle that will bounce
+      .bg-circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: rgba(11, 47, 86, 0.05);
+        
+        // Start hidden & scaled down
+        opacity: 0;
+        transform: scale(0.8);
+        transform-origin: center center;
+      }
+  
+      // The actual image remains still (no bounce).
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        border: 2px solid var(--color-primary);
+        border-radius: 50%;
+        width: 280px;
+        z-index: 1; // above the bg-circle
+      }
+    }
+  
+    // -------------------------
+    // Primary Heading
+    // -------------------------
+    .heading-primary {
+      font-family: "Press Start 2P", serif;
+      font-size: 4rem;
+      color: var(--color-primary);
+      line-height: 1;
+      text-align: center;
+      position: relative;
+      top: 4rem;
+  
+      // initial hidden state
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.7s ease 0.3s;
+    }
+  
+    // -------------------------
+    // Divider
+    // -------------------------
+    .divider {
+      height: 2px;
+      background-color: var(--color-primary);
+      position: relative;
+      margin-top: 6rem;
+      margin-bottom: 2rem;
+      width: 0; // start collapsed
+  
+      transition: width 1s ease 0.6s;
+  
+      &::after {
+        content: "";
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background-color: var(--color-secondary);
+        border: 2px solid var(--color-primary);
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+      }
+    }
+  
+    // -------------------------
+    // Subtitle
+    // -------------------------
+    .heading-subtitle {
+      padding-left: 4rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.7s ease 0.9s;
+    }
+  
+    // -------------------------
+    // Keyframes for BG Bounce
+    // -------------------------
+    @keyframes bounceBg {
+      0% {
+        transform: scale(0.8);
+      }
+      60% {
+        transform: scale(1.2);
+      }
+      80% {
+        transform: scale(0.95);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  
+    // -------------------------
+    // .animate class => triggers everything
+    // -------------------------
+    &.animate {
+      .image-container {
+        .bg-circle {
+          opacity: 1;
+          animation: bounceBg 1s ease forwards;
+        }
+      }
+  
+      .heading-primary {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .divider {
+        width: 100%;
+      }
+      .heading-subtitle {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  
+
+  .about-me-text p{
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }

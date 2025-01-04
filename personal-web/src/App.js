@@ -1,24 +1,21 @@
 import './App.css';
 import Header from './componenets/Header';
 import Banner from './componenets/Banner';
+import About from './componenets/About';
 
 
 function App() {
   return (
-    <div className="App smooth-scroll">
+    <div className="App">
       <Header />
-      <section>
+    <section>
       <Banner />
-        </section>
-        <section>
+    </section>
 
-        </section>
-        <section>
-        
-        </section>
-        <section>
-        
-        </section>
+    <section>
+      <About/>
+    </section>
+
     </div>
   );
 }

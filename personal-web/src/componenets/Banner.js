@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './Banner.css';
+import './Banner.css'
+import Button from '../Button';
 
 function Banner() {
   const [typedText, setTypedText] = useState(''); // Initialize with an empty string
@@ -45,9 +46,9 @@ function Banner() {
           <p>
             You’ve finally landed. Ready for a beautiful and performant new website? We’re your award-winning web design crew awaiting countdown.
           </p>
-          <a href="/consultation" title="Consultation" className="btn-primary">
-            Start Your Project
-          </a>
+          <Button href="/consultation" title="Consultation">
+        <span>-&gt;</span> Start Your Project
+      </Button>
         </div>
       </div>
     </div>

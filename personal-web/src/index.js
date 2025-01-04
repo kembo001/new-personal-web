@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
+import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
-import Scroll from './SmoothScroll';
+// import Scroll from './SmoothScroll';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Scroll/>
     <App />
+    {/* <Scroll /> */}
   </React.StrictMode>
 );
 
