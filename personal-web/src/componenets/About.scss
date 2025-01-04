@@ -1,8 +1,7 @@
 .about-me {
     display: grid;
     grid-template-columns: max-content 1fr;
-    grid-template-rows: 1.25fr min-content 0.5fr 0.5fr;
-    margin-bottom: 3rem;
+
   
     // -------------------------
     // Image Container / Circle
@@ -101,48 +100,52 @@
     // Keyframes for BG Bounce
     // -------------------------
     @keyframes bounceBg {
-      0% {
-        transform: scale(0.8);
-      }
-      60% {
-        transform: scale(1.2);
-      }
-      80% {
-        transform: scale(0.95);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-  
-    // -------------------------
-    // .animate class => triggers everything
-    // -------------------------
-    &.animate {
-      .image-container {
-        .bg-circle {
-          opacity: 1;
-          animation: bounceBg 1s ease forwards;
+        0% {
+          transform: scale(0.8);
+        }
+        60% {
+          transform: scale(1.2);
+        }
+        80% {
+          transform: scale(0.95);
+        }
+        100% {
+          transform: scale(1);
         }
       }
-  
-      .heading-primary {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .divider {
-        width: 100%;
-      }
-      .heading-subtitle {
-        opacity: 1;
-        transform: translateY(0);
+    
+      // -------------------------
+      // .animate class => triggers everything
+      // -------------------------
+      &.animate {
+        .image-container {
+          .bg-circle {
+            opacity: 1;
+            animation: bounceBg 1s ease forwards;
+          }
+        }
+    
+        .heading-primary {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .divider {
+          width: 100%;
+        }
+        .heading-subtitle {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
-  }
-  
+    
 
   .about-me-text p{
     font-size: 2rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
+  }
+
+  .about-me.animate .image-container .bg-circle{
+      z-index: 1;
   }

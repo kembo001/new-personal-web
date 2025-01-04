@@ -46,7 +46,7 @@ function Banner() {
           <p>
             You’ve finally landed. Ready for a beautiful and performant new website? We’re your award-winning web design crew awaiting countdown.
           </p>
-          <Button href="/consultation" title="Consultation">
+          <Button href="#contact-me" title="Consultation">
         <span>-&gt;</span> Start Your Project
       </Button>
         </div>

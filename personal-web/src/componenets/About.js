@@ -45,7 +45,7 @@ function About() {
       <div className="about-me-text">
         <div className="heading-primary">Brandon Kemboi</div>
         <div className="divider"></div>
-        <div class="heading-subtitle"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quia minima quibusdam eligendi doloribus, expedita ipsa optio ipsam cumque iusto dicta alias inventore, blanditiis ad, quod quaerat ea at. Quae!</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quia minima quibusdam eligendi doloribus, expedita ipsa optio ipsam cumque iusto dicta alias inventore, blanditiis ad, quod quaerat ea at. Quae!</p></div>
+        <div class="heading-subtitle"><p>Full-stack Web Developer with a passion for problem-solving, innovation, and creativity. Self-motivated by a deep love for web development and its limitless potential.</p><p>Always eager to learn and grow, I thrive on building solutions that make a meaningful impact. Currently open to new opportunities and ready to contribute to exciting projects.</p> </div>
 
       </div>
     </div>

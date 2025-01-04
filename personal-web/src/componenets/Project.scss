@@ -1,0 +1,133 @@
+.projects {
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* ---------------------------
+     1) PROJECTS HEADING
+  --------------------------- */
+  .heading-primary {
+    font-family: "Press Start 2P", serif;
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+
+    /* Start hidden */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.3s;
+  }
+
+  /* ---------------------------
+     2) WALKING GIF + DIVIDER
+  --------------------------- */
+  .walking-line-container {
+    position: relative;
+    width: 80%;        /* or 100%, adjust as needed */
+    max-width: 800px;  /* optional max width */
+    height: 100px;     /* enough height for the GIF + line */
+    margin-bottom: 2rem;
+
+    /* The GIF starts on the right side, hidden */
+    .walking-gif {
+      position: absolute;
+      bottom: 0;
+      /* Start it near the right edge. 
+         For example, if the gif is ~80px wide: */
+      left: calc(100% - 80px);
+      height: 80px;
+      opacity: 0;         /* hidden until animated */
+    }
+
+    /* The divider line also starts from the right to expand leftward */
+    .divider {
+      position: absolute;
+      bottom: 0;
+      right: 0;          /* anchor the line to the right */
+      height: 2px;
+      background-color: var(--color-primary);
+      width: 0;          /* start collapsed */
+      opacity: 0;
+      /* We'll use transform origin so it "unfolds" to the left */
+      transform-origin: right center;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        transform: translateY(50%);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--color-secondary);
+        border: 2px solid var(--color-primary);
+      }
+    }
+  }
+
+  /* ---------------------------
+     3) PROJECTS TEXT
+  --------------------------- */
+  .projects-text {
+    text-align: center;
+
+    > div {
+      margin: 0.5rem 0;
+    }
+    /* Fade in from below */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.5s;
+  }
+
+  /* ---------------------------
+     4) KEYFRAMES (RIGHT -> LEFT)
+  --------------------------- */
+  @keyframes walkAcrossReverse {
+    0% {
+      left: calc(100% - 80px);
+    }
+    100% {
+      left: 0;
+    }
+  }
+
+  /* For the line, we can simply expand from the right origin */
+  @keyframes lineExpandReverse {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  /* ---------------------------
+     5) TRIGGER ANIMATION
+  --------------------------- */
+  &.animate {
+    .heading-primary {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .walking-line-container {
+      .walking-gif {
+        opacity: 1;
+        animation: walkAcrossReverse 2s linear forwards;
+      }
+      .divider {
+        opacity: 1;
+        animation: lineExpandReverse 2s linear forwards;
+      }
+    }
+
+    .projects-text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

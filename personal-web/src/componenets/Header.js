@@ -1,14 +1,14 @@
 import React from 'react'
 import './Header.css'
-import Resume from '../Images/file-user-solid.svg';
-import Github from '../Images/github-brands-solid.svg';
-import LinkedIn from '../Images/linkedin-brands-solid.svg';
+import Logo from '../Images/BK.png';
 import ResumePDF from '../Images/2025-Resume.pdf'
 
 function Header() {
   return (
     <div className='header'>
-      <div className='logo'>B<span>K</span></div>
+      <div className='logo'>
+          <img src={Logo} />
+      </div>
 
       <div className='contacts'>
       <a href={ResumePDF} title='Resume' target="_blank">

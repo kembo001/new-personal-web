@@ -1,0 +1,177 @@
+.skills {
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  //---------------------------------------
+  // Heading at the top
+  //---------------------------------------
+  .heading-primary {
+    font-family: "Press Start 2P", serif;
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    // initial hidden state
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.3s;
+  }
+
+  //---------------------------------------
+  // Container for GIF + line
+  //---------------------------------------
+  .walking-line-container {
+    position: relative;
+    width: 80%;         // or 100%, adjust as needed
+    max-width: 800px;   // optional max width
+    height: 100px;      // enough height for the GIF + line
+    margin-bottom: 2rem; // space below
+
+    // Walking GIF
+    .walking-gif {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 80px;    // adjust as needed
+      opacity: 0;      // hidden initially
+    }
+
+    // The divider line
+    .divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background-color: var(--color-primary);
+      width: 0;        // start collapsed
+      opacity: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        transform: translateY(50%);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--color-secondary);
+        border: 2px solid var(--color-primary);
+        display: block;
+      }
+    }
+  }
+
+  //---------------------------------------
+  // Skills text
+  //---------------------------------------
+  .skills-text {
+    text-align: center;
+
+    .skills-subtitle {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.75rem;
+      opacity: 0; 
+      transform: translateY(20px);
+      transition: all 0.8s ease 0.7s;
+    }
+  }
+
+  //---------------------------------------
+  // Keyframes for walking + line expand
+  //---------------------------------------
+  @keyframes walkAcross {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: calc(100% - 80px); // match your .walking-gif width
+    }
+  }
+
+  @keyframes lineExpand {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  //---------------------------------------
+  // The .animate trigger
+  //---------------------------------------
+  &.animate {
+    .heading-primary {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .walking-line-container {
+      .walking-gif {
+        opacity: 1;
+        animation: walkAcross 2s linear forwards;
+      }
+      .divider {
+        opacity: 1;
+        animation: lineExpand 2s linear forwards;
+      }
+    }
+
+    .skills-text {
+      .skills-subtitle {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+.skills.animate .heading-primary{
+  font-family: "Press Start 2P", serif;
+  font-size: 4rem;
+  color: var(--color-primary);
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  top: 4rem;
+  transform: translateY(20px);
+  transition: all 0.7s ease 0.3s;
+  z-index: 1;
+}
+
+.skills.animate .walking-line-container .walking-gif{
+  z-index: 1;
+  background: transparent;
+
+}
+
+.skill{
+  background-color: rgba(11, 47, 86, 0.05);
+  padding: 2rem;
+  font-size: 2rem;
+  display: flex
+  ;
+      align-items: center;
+
+      justify-content: center;
+}
+
+
+
+.skill svg {
+  height: 3.25rem;
+  width: 3.25rem;
+  fill: var(--color-primary);
+  will-change: fill;
+  transition: fill .45s;
+  transition: background-color .35s, box-shadow .15s;
+  background-color: transparent;
+  margin-right: 5px;
+}
+
+.skill.dnn svg{
+  width: 5.25rem;
+}

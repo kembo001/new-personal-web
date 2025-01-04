@@ -2,6 +2,9 @@ import './App.css';
 import Header from './componenets/Header';
 import Banner from './componenets/Banner';
 import About from './componenets/About';
+import Skills from './componenets/Skills';
+import Projects from './componenets/Projects';
+import Contact from './componenets/Contact';
 
 
 function App() {
@@ -16,6 +19,17 @@ function App() {
       <About/>
     </section>
 
+    <section>
+      <Skills />
+    </section>
+
+    <section>
+      <Projects />
+    </section>
+
+    <section>
+      <Contact />
+    </section>
     </div>
   );
 }

@@ -71,3 +71,7 @@
     background-color: #0b2f56;
     fill: var(--color-bg);
 }
+
+.logo img{
+    width: 100px;
+}
