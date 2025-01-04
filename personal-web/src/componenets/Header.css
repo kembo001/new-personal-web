@@ -14,3 +14,60 @@
     border-bottom-right-radius: 2px;
     border: 1px solid var(--color-secondary);
 }
+
+.social svg{
+    height: 3.25rem;
+    width: 3.25rem;
+    fill: var(--color-primary);
+    will-change: fill;
+    -webkit-transition: fill .45s;
+    -o-transition: fill .45s;
+    transition: fill .45s;
+    -webkit-transition: background-color .35s, -webkit-box-shadow .15s;
+    transition: background-color .35s, -webkit-box-shadow .15s;
+    -o-transition: background-color .35s, box-shadow .15s;
+    transition: background-color .35s, box-shadow .15s;
+    transition: background-color .35s, box-shadow .15s, -webkit-box-shadow .15s;
+    
+}
+
+.contacts{
+    display: flex;
+    align-items: center;
+}
+.social{
+    height: 5.5rem;
+    width: 5.5rem;
+    border-radius: 50%;
+    border: 1px solid #0b2f56;
+    -webkit-box-shadow: 0 0 0 1px #0b2f56;
+    box-shadow: 0 0 0 1px #0b2f56;
+    background-color: transparent;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex
+;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    will-change: background-color, box-shadow;
+    -webkit-transition: background-color .35s, -webkit-box-shadow .15s;
+    transition: background-color .35s, -webkit-box-shadow .15s;
+    -o-transition: background-color .35s, box-shadow .15s;
+    transition: background-color .35s, box-shadow .15s;
+    transition: background-color .35s, box-shadow .15s, -webkit-box-shadow .15s;
+    margin-right: 10px;
+}
+
+.social:hover{
+    border: 1px solid #0b2f56;
+    -webkit-box-shadow: 0 0 0 1px #0b2f56;
+    box-shadow: 0 0 0 1px #0b2f56;
+    background-color: #0b2f56;
+}
+
+.social:hover svg{
+    background-color: #0b2f56;
+    fill: var(--color-bg);
+}
