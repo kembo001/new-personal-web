@@ -3,10 +3,12 @@
 :root {
   --color-bg: #e3dcdc;
   --color-primary: #0b2f56;
-  --color-secondary: #56320b;
+  --color-secondary: #546d89;
   --color-accent: #FF6C44;
   --color-white: #f1f1e6;
-  --color-light: rgba(255, 255, 255, 1);
+  --color-light: rgba(11, 47, 86, 0.05);
+  --color-black: #333333;
+
   --transition: all 400ms ease;
 
   --container-width-lg: 75%;

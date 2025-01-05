@@ -1,36 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Walking from '../Images/walking-reverse.gif';
-import './Project.scss'; // We'll define our SCSS or CSS here
+import './Project.scss'; 
+import myProjects from './MyProjects';
+
 
 function Projects() {
   const projectsRef = useRef(null);
   const [inView, setInView] = useState(false);
-  const myProjects = [
-    {
-      title: "Porject Title",
-      image: "...",
-      tech: ["React", "SASS", "Node.js"],
-      description: "A responsive personal portfolio website..."
-    },
-    {
-        title: "Porject Title",
-        image: "...",
-        tech: ["React", "SASS", "Node.js"],
-        description: "A responsive personal portfolio website..."
-      },
-      {
-        title: "Porject Title",
-        image: "...",
-        tech: ["React", "SASS", "Node.js"],
-        description: "A responsive personal portfolio website..."
-      },
-      {
-        title: "Porject Title",
-        image: "...",
-        tech: ["React", "SASS", "Node.js"],
-        description: "A responsive personal portfolio website..."
-      }
-  ];
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -75,6 +52,16 @@ function Projects() {
                 ))}
               </ul>
               <p className="project-description">{proj.description}</p>
+              <div className="project-links">
+          <a  className='btn-primary' href={proj.repo} target="_blank" rel="noopener noreferrer">
+            GitHub Repo
+          </a>
+          {proj.liveDemo && (
+            <a  className='btn-secondary' href={proj.liveDemo} target="_blank" rel="noopener noreferrer">
+              Live Demo
+            </a>
+          )}
+        </div>
             </div>
           </div>
         ))}

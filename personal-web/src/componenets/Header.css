@@ -61,14 +61,14 @@
 }
 
 .social:hover{
-    border: 1px solid #0b2f56;
-    -webkit-box-shadow: 0 0 0 1px #0b2f56;
-    box-shadow: 0 0 0 1px #0b2f56;
-    background-color: #0b2f56;
+    border: 1px solid #546d89;
+    -webkit-box-shadow: 0 0 0 1px #546d89;
+    box-shadow: 0 0 0 1px #546d89;
+    background-color: #546d89;
 }
 
 .social:hover svg{
-    background-color: #0b2f56;
+    background-color: #546d89;
     fill: var(--color-bg);
 }
 

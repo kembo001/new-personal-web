@@ -53,6 +53,7 @@ p{
   .banner p{
     width: 100% !important;
     text-align: center;
+    font-size: 1.5rem !important;
   }
 
   .banner-subtitle{
@@ -60,4 +61,206 @@ p{
     flex-direction: column;
     align-items: center;
   }
+
+  .banner h1{
+    font-size: 2rem !important;
+  }
+  .my-name h1{
+    font-size: .8rem !important;
+  }
+}
+
+@media screen and (max-width:675px){
+  .banner h1 {
+    font-size: 1.7rem !important;
+}
+.my-name h1 {
+  font-size: .5rem !important;
+}
+}
+
+@media screen and (max-width:567px){
+  .banner h1 {
+    font-size: 1.3rem !important;
+}
+
+.banner p {
+  font-size: 1rem !important;
+}
+
+.header{
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center;
+}
+.logo{
+  margin-bottom: 2rem;
+}
+.my-name h1 {
+  font-size: .5rem !important;
+}
+
+.btn-primary{
+  font-size: .9rem !important;
+
+}
+}
+
+
+@media screen and (max-width:462px){
+  .banner .text{
+    flex-direction: column;
+  }
+
+  .banner h1 {
+    font-size: 1.6rem !important;
+}
+
+  .my-name h1{
+    margin-top: 1rem;
+    font-size: .9rem !important;
+  }
+
+  
+
+}
+
+@media screen and (max-width:423px){
+  .banner h1 {
+    font-size: 1.4rem !important;
+}
+.my-name h1 {
+  font-size: .5rem !important;
+}
+}
+
+@media screen and (max-width:373px){
+  .banner h1 {
+    font-size: 1.1rem !important;
+}
+.my-name h1 {
+  font-size: .5rem !important;
+}
+
+}
+
+@media screen and (max-width:567px){
+  .about-me .heading-primary{
+    font-size: 1.7rem !important;
+  }
+  .about-me .heading-subtitle {
+    padding-left: 1rem !important;
+}
+
+.about-me-text p, .skills-text p {
+  font-size: 1.4rem !important;
+}
+.skills.animate .heading-primary{
+  font-size: 3rem; top: 0;
+}
+}
+
+@media screen and (max-width:432px){
+  .about-me .heading-primary, .skills-text p{
+    font-size: 1.4rem !important;
+  }
+}
+
+@media screen and (max-width:358px){
+  .about-me .heading-primary, .skills-text p{
+    font-size: 1.2rem !important;
+  }
+  .about-me-text p{
+    font-size: 1.1rem !important;
+  }
+}
+
+
+@media screen and (max-width:1722px){
+.project-links a{
+font-size: 1rem !important;
+}
+}
+
+
+@media screen and (max-width:1442px){
+  .project-links a {
+    font-size: .8rem !important;
+}
+}
+
+@media screen and (max-width:1230px){
+  .projects-grid{
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .project-links a{
+    font-size: 1.25rem !important;
+    }
+    .project-image{
+      height: auto !important;
+    }
+}
+
+@media screen and (max-width:1124px){
+  .project-links a{
+    font-size: 1rem !important;
+    }
+}
+
+@media screen and (max-width:969px){
+  .project-links a {
+    font-size: .75rem !important;
+}
+}
+
+
+@media screen and (max-width:767px){
+  .projects-grid {
+    display: grid
+;
+    grid-template-columns: repeat(1, 1fr) !important;
+    gap: 2rem;
+}
+.project-links a{
+  font-size: 1.25rem !important;
+  }
+}
+
+
+@media screen and (max-width:563px){
+  .projects .heading-primary{
+    font-size: 3rem !important;
+    top: 0rem !important;
+
+  }
+  .project-links a{
+    font-size: 1rem !important;
+    }
+}
+
+@media screen and (max-width:470px){
+  .project-links a {
+    font-size: .8rem !important;
+}
+}
+
+@media screen and (max-width:486px){
+  .projects .heading-primary{
+    font-size: 2.5rem !important;
+  }
+
+  .skills.animate .heading-primary{
+    font-size: 2.5rem !important;
+    top: 0rem !important;
+  }
+
+  #contacts h2{
+    font-size: 2rem !important;
+  }
+}
+
+@media screen and (max-width:400px){
+  .project-links a {
+    font-size: .62rem !important;
+}
 }
