@@ -42,7 +42,7 @@ function Banner() {
             <h1>Full-Stack<br></br>Web Developer</h1>
           </div>
         </div>
-        <div>
+        <div className='banner-subtitle'>
           <p>
             You’ve finally landed. Ready for a beautiful and performant new website? We’re your award-winning web design crew awaiting countdown.
           </p>
